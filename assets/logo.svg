@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" role="img" aria-label="Zest &amp; Root logo">
+  <title>Zest &amp; Root</title>
+  <circle cx="24" cy="24" r="22" fill="#1F4D3A"/>
+  <path d="M24 10c-6 4-9 9-9 14a9 9 0 0 0 18 0c0-5-3-10-9-14Z" fill="#F4D35E"/>
+  <path d="M24 18v18M24 26l-5-4M24 30l5-4" stroke="#1F4D3A" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+  <text x="56" y="32" font-family="Fraunces, Georgia, serif" font-size="24" font-weight="700" fill="#1F4D3A" letter-spacing="-0.5">Zest &amp; Root</text>
+</svg>

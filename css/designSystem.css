@@ -1,0 +1,76 @@
+/* ==========================================================
+   Design system documentation page only (not used by index.html)
+   Still uses tokens.css variables exclusively.
+   ========================================================== */
+
+.dsHeader { background: var(--colorPrimary); color: var(--colorTextOnPrimary); padding-block: var(--space8); }
+.dsHeader .textDisplay { color: var(--colorTextOnPrimary); }
+.dsHeader .textEyebrow { color: var(--colorAccent); }
+.dsHeader p { max-width: 40rem; }
+
+.dsNav { background: var(--colorOat); position: sticky; top: 0; z-index: 10; border-bottom: 1px solid var(--colorBorder); }
+.dsNav ul { display: flex; gap: var(--space1); overflow-x: auto; padding-block: var(--space1); }
+.dsNav a {
+  display: inline-flex; align-items: center; min-height: var(--tapTargetMin);
+  padding-inline: var(--space2); border-radius: var(--radiusPill);
+  color: var(--colorPrimary); font-weight: var(--fontWeightMedium); text-decoration: none; white-space: nowrap;
+}
+.dsNav a:hover { background: var(--colorAccent); }
+
+.dsSection { padding-block: var(--space6); border-bottom: 1px solid var(--colorBorder); }
+.dsSection > .container > .textH1 { margin-bottom: var(--space1); }
+.dsSection > .container > .textMuted { margin-bottom: var(--space4); max-width: 42rem; }
+.dsSubhead { margin-block: var(--space4) var(--space2); }
+
+/* Swatches */
+.swatchGrid { display: grid; gap: var(--space2); grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); }
+.swatch { background: var(--colorSurface); border-radius: var(--radiusMd); box-shadow: var(--shadowSm); overflow: hidden; }
+.swatchChip { height: var(--space12); background: var(--swatchColor); border-bottom: 1px solid var(--colorBorder); }
+.swatchInfo { padding: var(--space2); display: flex; flex-direction: column; gap: var(--space05); }
+.swatchName { font-weight: var(--fontWeightBold); margin: 0; }
+.swatchHex { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: var(--fontSizeSm); margin: 0; }
+.swatchVar { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: var(--fontSizeXs); color: var(--colorTextMuted); margin: 0; }
+
+/* Contrast table */
+.tableWrap { overflow-x: auto; border-radius: var(--radiusMd); box-shadow: var(--shadowSm); background: var(--colorSurface); }
+.dsTable { width: 100%; border-collapse: collapse; font-size: var(--fontSizeSm); }
+.dsTable th, .dsTable td { text-align: left; padding: var(--space1) var(--space2); border-bottom: 1px solid var(--colorOat); vertical-align: middle; }
+.dsTable th { background: var(--colorOat); font-weight: var(--fontWeightBold); }
+.pairSample { display: inline-block; padding: var(--space05) var(--space2); border-radius: var(--radiusSm); font-weight: var(--fontWeightBold); }
+.pass { color: var(--colorPrimary); font-weight: var(--fontWeightBold); }
+
+/* Type specimens */
+.typeRow { display: grid; gap: var(--space1); padding-block: var(--space2); border-bottom: 1px solid var(--colorOat); }
+.typeMeta { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: var(--fontSizeXs); color: var(--colorTextMuted); margin: 0; }
+@media (min-width: 768px) {
+  .typeRow { grid-template-columns: 14rem 1fr; align-items: baseline; gap: var(--space3); }
+}
+.fontPair { display: grid; gap: var(--space2); }
+@media (min-width: 768px) { .fontPair { grid-template-columns: 1fr 1fr; } }
+.fontCard { background: var(--colorSurface); border-radius: var(--radiusMd); padding: var(--space3); box-shadow: var(--shadowSm); }
+.fontCard .glyphs { font-size: var(--fontSize2xl); line-height: var(--lineHeightTight); margin: var(--space1) 0; }
+
+/* Component demos */
+.demoGrid { display: grid; gap: var(--space3); }
+@media (min-width: 768px) { .demoGrid.cols2 { grid-template-columns: repeat(2, 1fr); } .demoGrid.cols3 { grid-template-columns: repeat(3, 1fr); } }
+.stateGrid { display: grid; gap: var(--space3); grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); align-items: end; }
+.stateCell { display: flex; flex-direction: column; gap: var(--space1); align-items: flex-start; }
+.stateRow { background: var(--colorSurface); border-radius: var(--radiusMd); padding: var(--space3); box-shadow: var(--shadowSm); margin-bottom: var(--space2); }
+.stateRow.onDark { background: var(--colorPrimary); }
+.stateRow.onDark .textCaption { color: var(--colorOat); }
+.stateRowTitle { margin: 0 0 var(--space2); }
+
+.iconRowDemo { display: grid; gap: var(--space2); grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr)); }
+.iconCell { display: flex; flex-direction: column; align-items: center; gap: var(--space1); text-align: center; background: var(--colorSurface); padding: var(--space3) var(--space2); border-radius: var(--radiusMd); box-shadow: var(--shadowSm); }
+
+/* Spacing + radius docs */
+.spaceRow { display: grid; grid-template-columns: 6.5rem 4.5rem 1fr; align-items: center; gap: var(--space2); padding-block: var(--space1); }
+.spaceBar { height: var(--space2); background: var(--colorSecondary); border-radius: var(--radiusSm); width: var(--barSize); }
+.radiusGrid { display: grid; gap: var(--space2); grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)); }
+.radiusCell { display: flex; flex-direction: column; gap: var(--space1); }
+.radiusBox { height: var(--space12); background: var(--colorPrimary); border-radius: var(--radiusValue); }
+.ruleList { margin: 0; padding-left: var(--space3); display: grid; gap: var(--space1); }
+.onPage { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: var(--colorOat); padding: 0 var(--space05); border-radius: var(--space05); font-size: 0.9em; }
+
+.dsFooter { background: var(--colorPrimary); color: var(--colorTextOnPrimary); padding-block: var(--space6); }
+.dsFooter p { margin: 0; }

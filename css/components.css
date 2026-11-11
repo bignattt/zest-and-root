@@ -1,0 +1,125 @@
+/* ==========================================================
+   Zest & Root — components
+   Buttons, cards, badges, icons, image placeholders.
+   The .isHover / .isFocus / .isPressed classes mirror the real
+   pseudo-states so the design system page can show them side by side.
+   ========================================================== */
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space1);
+  min-height: var(--tapTargetMin);
+  padding: var(--space1) var(--space3);
+  border: 2px solid transparent;
+  border-radius: var(--radiusPill);
+  font-family: var(--fontBody);
+  font-size: var(--fontSizeBase);
+  font-weight: var(--fontWeightBold);
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--durationFast) var(--easeOut),
+    color var(--durationFast) var(--easeOut),
+    border-color var(--durationFast) var(--easeOut),
+    transform var(--durationFast) var(--easeOut);
+}
+
+.btnPrimary { background: var(--colorPrimary); color: var(--colorTextOnPrimary); }
+.btnPrimary:hover, .btnPrimary.isHover { background: var(--colorPrimaryHover); transform: translateY(-1px); }
+.btnPrimary:active, .btnPrimary.isPressed { background: var(--colorPrimaryPressed); transform: translateY(1px); }
+
+.btnSecondary { background: var(--colorSecondary); color: var(--colorTextOnSecondary); }
+.btnSecondary:hover, .btnSecondary.isHover { background: var(--colorSecondaryHover); transform: translateY(-1px); }
+.btnSecondary:active, .btnSecondary.isPressed { background: var(--colorSecondaryPressed); transform: translateY(1px); }
+
+.btnOutline { background: transparent; color: var(--colorPrimary); border-color: var(--colorPrimary); }
+.btnOutline:hover, .btnOutline.isHover { background: var(--colorPrimary); color: var(--colorTextOnPrimary); transform: translateY(-1px); }
+.btnOutline:active, .btnOutline.isPressed { background: var(--colorPrimaryPressed); color: var(--colorTextOnPrimary); transform: translateY(1px); }
+
+/* Static focus preview (real focus uses :focus-visible from base.css) */
+.btn.isFocus { outline: var(--focusRingWidth) solid var(--colorFocus); outline-offset: var(--focusRingOffset); }
+.onDark .btn.isFocus { outline-color: var(--colorFocusOnDark); }
+
+.btn[disabled], .btn.isDisabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+.btnSm { min-height: var(--tapTargetMin); padding-inline: var(--space2); font-size: var(--fontSizeSm); }
+
+/* ---------- Badge ---------- */
+.badge {
+  display: inline-block;
+  padding: var(--space05) var(--space2);
+  border-radius: var(--radiusPill);
+  background: var(--colorAccent);
+  color: var(--colorInk);
+  font-size: var(--fontSizeXs);
+  font-weight: var(--fontWeightBold);
+  text-transform: uppercase;
+  letter-spacing: var(--letterSpacingWide);
+}
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--colorSurface);
+  border-radius: var(--radiusMd);
+  box-shadow: var(--shadowSm);
+  overflow: hidden;
+  transition: transform var(--durationBase) var(--easeOut), box-shadow var(--durationBase) var(--easeOut);
+}
+.card:hover, .card.isHover { transform: translateY(calc(var(--space05) * -1)); box-shadow: var(--shadowMd); }
+.cardBody { padding: var(--space3); display: flex; flex-direction: column; gap: var(--space1); }
+.cardFooter { display: flex; align-items: center; justify-content: space-between; gap: var(--space2); margin-top: var(--space2); }
+.cardPrice { font-family: var(--fontHeading); font-size: var(--fontSizeLg); font-weight: var(--fontWeightBold); color: var(--colorPrimary); }
+
+.cardFeature {
+  background: var(--colorSurfaceAlt);
+  border-radius: var(--radiusMd);
+  padding: var(--space3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space2);
+}
+.cardFeature .iconWrap { width: var(--space6); height: var(--space6); }
+
+/* ---------- Icons ---------- */
+.icon { width: var(--space3); height: var(--space3); fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.iconWrap {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: var(--space6); height: var(--space6);
+  border-radius: var(--radiusPill);
+  background: var(--colorPrimary);
+  color: var(--colorAccent);
+}
+.iconWrap .icon { width: var(--space3); height: var(--space3); }
+.iconWrapSoft { background: var(--colorAccent); color: var(--colorPrimary); }
+
+/* ---------- Image placeholders (pure CSS / SVG, no photos) ---------- */
+.imgPlaceholder {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: var(--imgBg, var(--colorSecondary));
+}
+.imgPlaceholder::before, .imgPlaceholder::after {
+  content: "";
+  position: absolute;
+  border-radius: var(--radiusPill);
+  background: var(--colorAccent);
+  opacity: 0.55;
+}
+.imgPlaceholder::before { width: 55%; aspect-ratio: 1; left: -12%; bottom: -25%; }
+.imgPlaceholder::after { width: 30%; aspect-ratio: 1; right: 8%; top: 10%; background: var(--colorCream); opacity: 0.4; }
+.imgPlaceholder > svg { position: relative; z-index: 1; width: 42%; height: auto; }
+.imgGreen { --imgBg: var(--colorPrimary); }
+.imgOat { --imgBg: var(--colorOat); }
+
+/* ---------- Bottle illustration (inline SVG symbol #illBottle) ---------- */
+.bottleBody { fill: var(--colorCream); }
+.bottleLiquid { fill: var(--bottleLiquid, var(--colorSecondary)); }
+.bottleCap { fill: var(--colorInk); }
+.bottleLabel { fill: var(--colorPrimary); }
+.bottleShine { fill: var(--colorWhite); opacity: 0.55; }

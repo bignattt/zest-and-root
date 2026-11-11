@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zest &amp; Root — Design System (Concept)</title>
+  <meta name="description" content="One-page design system for Zest &amp; Root, a fictional cold-pressed ginger and citrus juice brand. Concept project.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/designSystem.css">
+</head>
+<body>
+  <a class="skipLink" href="#main">Skip to content</a>
+
+  <!-- SVG icon sprite (inline so the page works when opened straight from disk) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="iconRoot" viewBox="0 0 24 24"><path d="M5 14c0-3 2-5 5-5h3c3 0 5 2 5 5s-2 5-5 5H9c-2.5 0-4-2-4-5Z"/><path d="M13 9V5M13 5l-2-2M13 5l2-2M8 14h.01M14 15h.01"/></symbol>
+    <symbol id="iconCitrus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5.5"/><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></symbol>
+    <symbol id="iconLeaf" viewBox="0 0 24 24"><path d="M20 4c-9 0-15 4-15 11 0 2 .6 3.800 1.600 5C13 20 20 15 20 4Z"/><path d="M4 21c2-5 5-8 10-11"/></symbol>
+    <symbol id="iconDrop" viewBox="0 0 24 24"><path d="M12 3c4 5 6.500 8.200 6.500 11.500a6.500 6.500 0 0 1-13 0C5.500 11.200 8 8 12 3Z"/><path d="M9 15a3 3 0 0 0 3 3"/></symbol>
+    <symbol id="iconSnow" viewBox="0 0 24 24"><path d="M12 2v20M3.300 7l17.400 10M3.300 17 20.700 7M9 3.500l3 2.500 3-2.500M9 20.500l3-2.500 3 2.500"/></symbol>
+    <symbol id="iconBottle" viewBox="0 0 24 24"><path d="M10 2h4v3l1.500 2.500c.3.500.5 1 .5 1.600V20a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V9.100c0-.6.200-1.100.5-1.600L10 5V2Z"/><path d="M8 13h8"/></symbol>
+    <symbol id="iconArrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="iconPlus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="iconMenu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="iconClose" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="illBottle" viewBox="0 0 120 200">
+      <rect class="bottleCap" x="44" y="6" width="32" height="20" rx="4"/>
+      <path class="bottleBody" d="M48 26h24v22c0 8 18 14 18 30v100c0 10-8 18-18 18H48c-10 0-18-8-18-18V78c0-16 18-22 18-30V26Z"/>
+      <path class="bottleLiquid" d="M32 92h56v86c0 10-8 18-18 18H50c-10 0-18-8-18-18V92Z"/>
+      <rect class="bottleLabel" x="40" y="116" width="40" height="50" rx="6"/>
+      <circle cx="60" cy="134" r="7" fill="#F4D35E"/>
+      <rect x="47" y="148" width="26" height="3" rx="1.500" fill="#FBF6EA"/>
+      <rect x="51" y="155" width="18" height="3" rx="1.500" fill="#FBF6EA"/>
+      <rect class="bottleShine" x="38" y="84" width="5" height="60" rx="2.500"/>
+    </symbol>
+  </svg>
+
+  <header class="dsHeader onDark">
+    <div class="container stack" style="--stackGap: var(--space2)">
+      <p class="textEyebrow">Concept project · Design system v1.0</p>
+      <h1 class="textDisplay">Zest &amp; Root</h1>
+      <p class="textBodyLg">One-page design system for a fictional cold-pressed ginger and citrus juice brand. Personality: <strong>zesty, grounded, honest</strong>. Everything here is a concept for a portfolio, not a real company.</p>
+    </div>
+  </header>
+
+  <nav class="dsNav" aria-label="Design system sections">
+    <div class="container">
+      <ul role="list">
+        <li><a href="#color">Color</a></li>
+        <li><a href="#type">Type</a></li>
+        <li><a href="#buttons">Buttons</a></li>
+        <li><a href="#cards">Cards</a></li>
+        <li><a href="#icons">Icons</a></li>
+        <li><a href="#spacing">Spacing</a></li>
+        <li><a href="#radius">Radius</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- ========== COLOR ========== -->
+    <section class="dsSection" id="color" aria-labelledby="colorTitle">
+      <div class="container">
+        <h2 class="textH1" id="colorTitle">Color</h2>
+        <p class="textMuted">Naming: every token is camelCase, <span class="onPage">--color</span> + role. Components use the token, never the hex.</p>
+
+        <h3 class="textH3 dsSubhead">Brand</h3>
+        <div class="swatchGrid">
+          <div class="swatch"><div class="swatchChip" style="--swatchColor: var(--colorPrimary)"></div><div class="swatchInfo"><p class="swatchName">Root Green · Primary</p><p class="swatchHex">#1F4D3A</p><p class="swatchVar">--colorPrimary</p></div></div>
+          <div class="swatch"><div class="swatchChip" style="--swatchColor: var(--colorSecondary)"></div><div class="swatchInfo"><p class="swatchName">Zest Orange · Secondary</p><p class="swatchHex">#F59E2A</p><p class="swatchVar">--colorSecondary</p></div></div>
+          <div class="swatch"><div class="swatchChip" style="--swatchColor: var(--colorAccent)"></div><div class="swatchInfo"><p class="swatchName">Lemon Zest · Accent</p><p class="swatchHex">#F4D35E</p><p class="swatchVar">--colorAccent</p></div></div>
+        </div>
+
+        <h3 class="textH3 dsSubhead">Neutrals</h3>
+        <div class="swatchGrid">
+          <div class="swatch"><div class="swatchChip" style="--swatchColor: var(--colorInk)"></div><div class="swatchInfo"><p class="swatchName">Ink · 900</p><p class="swatchHex">#1B2A22</p><p class="swatchVar">--colorInk</p></div></div>
+          <div class="swatch"><div class="swatchChip" style="--swatchColor: var(--colorBark)"></div><div class="swatchInfo"><p class="swatchName">Bark · 600</p><p class="swatchHex">#5A5143</p><p class="swatchVar">--colorBark</p></div></div>
+          <div class="swatch"><div class="swatchChip" style="--swatchColor: var(--colorStone)"></div><div class="swatchInfo"><p class="swatchName">Stone · 300</p><p class="swatchHex">#B9B09C</p><p class="swatchVar">--colorStone</p></div></div>
+          <div class="swatch"><div class="swatchChip" style="--swatchColor: var(--colorOat)"></div><div class="swatchInfo"><p class="swatchName">Oat · 100</p><p class="swatchHex">#EFE6D2</p><p class="swatchVar">--colorOat</p></div></div>
+          <div class="swatch"><div class="swatchChip" style="--swatchColor: var(--colorCream)"></div><div class="swatchInfo"><p class="swatchName">Cream · 50</p><p class="swatchHex">#FBF6EA</p><p class="swatchVar">--colorCream</p></div></div>
+        </div>
+
+        <h3 class="textH3 dsSubhead">Approved text pairings (WCAG contrast)</h3>
+        <p class="textBodySm textMuted" style="margin-bottom: var(--space2)">Ratios calculated with the WCAG 2.x formula. Normal text needs 4.5:1 or more. Stone is decorative only and never used for text.</p>
+        <div class="tableWrap">
+          <table class="dsTable">
+            <thead><tr><th scope="col">Sample</th><th scope="col">Text on background</th><th scope="col">Ratio</th><th scope="col">Result</th></tr></thead>
+            <tbody>
+              <tr><td><span class="pairSample" style="color: var(--colorTextOnPrimary); background: var(--colorPrimary)">Aa Fresh</span></td><td>White on Root Green</td><td>9.63:1</td><td class="pass">AAA</td></tr>
+              <tr><td><span class="pairSample" style="color: var(--colorInk); background: var(--colorCream)">Aa Fresh</span></td><td>Ink on Cream</td><td>13.90:1</td><td class="pass">AAA</td></tr>
+              <tr><td><span class="pairSample" style="color: var(--colorBark); background: var(--colorCream)">Aa Fresh</span></td><td>Bark on Cream</td><td>7.23:1</td><td class="pass">AAA</td></tr>
+              <tr><td><span class="pairSample" style="color: var(--colorBark); background: var(--colorOat)">Aa Fresh</span></td><td>Bark on Oat</td><td>6.28:1</td><td class="pass">AA</td></tr>
+              <tr><td><span class="pairSample" style="color: var(--colorInk); background: var(--colorSecondary)">Aa Fresh</span></td><td>Ink on Zest Orange</td><td>7.00:1</td><td class="pass">AAA</td></tr>
+              <tr><td><span class="pairSample" style="color: var(--colorInk); background: var(--colorAccent)">Aa Fresh</span></td><td>Ink on Lemon Zest</td><td>10.23:1</td><td class="pass">AAA</td></tr>
+              <tr><td><span class="pairSample" style="color: var(--colorAccent); background: var(--colorPrimary)">Aa Fresh</span></td><td>Lemon Zest on Root Green</td><td>6.57:1</td><td class="pass">AA</td></tr>
+              <tr><td><span class="pairSample" style="color: var(--colorPrimary); background: var(--colorSecondary)">Aa Fresh</span></td><td>Root Green on Zest Orange (large text only)</td><td>4.50:1</td><td class="pass">AA</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TYPE ========== -->
+    <section class="dsSection" id="type" aria-labelledby="typeTitle">
+      <div class="container">
+        <h2 class="textH1" id="typeTitle">Typography</h2>
+        <p class="textMuted">Fraunces for headings (warm, handcrafted). DM Sans for body and UI (clean, readable). Large sizes scale fluidly between 375px and 1280px screens.</p>
+
+        <div class="fontPair">
+          <div class="fontCard">
+            <p class="textCaption">Heading · Fraunces 700 · <span class="onPage">--fontHeading</span></p>
+            <p class="glyphs textH1" aria-hidden="true">Aa Gg Rr 123</p>
+            <p class="textBodySm">Soft serif curves echo citrus peel and root shapes.</p>
+          </div>
+          <div class="fontCard">
+            <p class="textCaption">Body · DM Sans 400 / 500 / 700 · <span class="onPage">--fontBody</span></p>
+            <p class="glyphs" style="font-family: var(--fontBody); font-weight: var(--fontWeightMedium)" aria-hidden="true">Aa Gg Rr 123</p>
+            <p class="textBodySm">Open, geometric and friendly at small sizes.</p>
+          </div>
+        </div>
+
+        <h3 class="textH3 dsSubhead">Type scale</h3>
+        <div>
+          <div class="typeRow"><p class="typeMeta">textDisplay · Fraunces 700<br>--fontSize3xl · 44→64px · lh 1.1</p><p class="textDisplay">Cold-pressed, rooted</p></div>
+          <div class="typeRow"><p class="typeMeta">textH1 · Fraunces 700<br>--fontSize2xl · 36→48px · lh 1.1</p><p class="textH1">Ginger with a citrus kick</p></div>
+          <div class="typeRow"><p class="typeMeta">textH2 · Fraunces 700<br>--fontSizeXl · 28→32px · lh 1.25</p><p class="textH2">Three bottles, one root</p></div>
+          <div class="typeRow"><p class="typeMeta">textH3 · Fraunces 700<br>--fontSizeLg · 24px · lh 1.25</p><p class="textH3">Pressed in small batches</p></div>
+          <div class="typeRow"><p class="typeMeta">textH4 · Fraunces 700<br>--fontSizeMd · 20px · lh 1.25</p><p class="textH4">Fresh ginger, whole lemons</p></div>
+          <div class="typeRow"><p class="typeMeta">textBodyLg · DM Sans 400<br>--fontSizeMd · 20px · lh 1.6</p><p class="textBodyLg">A bright, spicy juice made from whole ingredients and nothing you can't pronounce.</p></div>
+          <div class="typeRow"><p class="typeMeta">textBody · DM Sans 400<br>--fontSizeBase · 16px · lh 1.6</p><p class="textBody">Our concept recipes start with fresh ginger root, then add citrus for balance. Every product here is fictional.</p></div>
+          <div class="typeRow"><p class="typeMeta">textBodySm · DM Sans 400<br>--fontSizeSm · 14px · lh 1.6</p><p class="textBodySm">Small print, form labels and supporting details.</p></div>
+          <div class="typeRow"><p class="typeMeta">textCaption · DM Sans 400<br>--fontSizeXs · 12px · lh 1.6</p><p class="textCaption">Captions and legal notes</p></div>
+          <div class="typeRow"><p class="typeMeta">textEyebrow · DM Sans 700<br>--fontSizeSm · caps · +0.12em</p><p class="textEyebrow">Small-batch juice</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== BUTTONS ========== -->
+    <section class="dsSection" id="buttons" aria-labelledby="buttonsTitle">
+      <div class="container">
+        <h2 class="textH1" id="buttonsTitle">Buttons</h2>
+        <p class="textMuted">Pill shape, minimum 44px tall for touch. Each variant has default, hover, focus and pressed states. The state samples are static copies so you can compare them; the real buttons below respond live.</p>
+
+        <div class="stateRow">
+          <h3 class="textH4 stateRowTitle">Primary</h3>
+          <div class="stateGrid">
+            <div class="stateCell"><button class="btn btnPrimary" type="button">Shop juice</button><span class="textCaption">Default</span></div>
+            <div class="stateCell"><button class="btn btnPrimary isHover" type="button">Shop juice</button><span class="textCaption">Hover · --colorPrimaryHover</span></div>
+            <div class="stateCell"><button class="btn btnPrimary isFocus" type="button">Shop juice</button><span class="textCaption">Focus · 3px ring, 2px offset</span></div>
+            <div class="stateCell"><button class="btn btnPrimary isPressed" type="button">Shop juice</button><span class="textCaption">Pressed · --colorPrimaryPressed</span></div>
+          </div>
+        </div>
+
+        <div class="stateRow">
+          <h3 class="textH4 stateRowTitle">Secondary</h3>
+          <div class="stateGrid">
+            <div class="stateCell"><button class="btn btnSecondary" type="button">Build a box</button><span class="textCaption">Default</span></div>
+            <div class="stateCell"><button class="btn btnSecondary isHover" type="button">Build a box</button><span class="textCaption">Hover</span></div>
+            <div class="stateCell"><button class="btn btnSecondary isFocus" type="button">Build a box</button><span class="textCaption">Focus</span></div>
+            <div class="stateCell"><button class="btn btnSecondary isPressed" type="button">Build a box</button><span class="textCaption">Pressed</span></div>
+          </div>
+        </div>
+
+        <div class="stateRow">
+          <h3 class="textH4 stateRowTitle">Outline</h3>
+          <div class="stateGrid">
+            <div class="stateCell"><button class="btn btnOutline" type="button">Learn more</button><span class="textCaption">Default</span></div>
+            <div class="stateCell"><button class="btn btnOutline isHover" type="button">Learn more</button><span class="textCaption">Hover</span></div>
+            <div class="stateCell"><button class="btn btnOutline isFocus" type="button">Learn more</button><span class="textCaption">Focus</span></div>
+            <div class="stateCell"><button class="btn btnOutline isPressed" type="button">Learn more</button><span class="textCaption">Pressed</span></div>
+          </div>
+        </div>
+
+        <div class="stateRow onDark">
+          <h3 class="textH4 stateRowTitle" style="color: var(--colorTextOnPrimary)">On Root Green (focus ring switches to Lemon Zest)</h3>
+          <div class="stateGrid">
+            <div class="stateCell"><button class="btn btnSecondary" type="button">Shop juice</button><span class="textCaption">Default</span></div>
+            <div class="stateCell"><button class="btn btnSecondary isFocus" type="button">Shop juice</button><span class="textCaption">Focus</span></div>
+          </div>
+        </div>
+
+        <h3 class="textH3 dsSubhead">Live buttons (try hover, Tab and click)</h3>
+        <div style="display:flex; flex-wrap:wrap; gap: var(--space2)">
+          <button class="btn btnPrimary" type="button">Primary</button>
+          <button class="btn btnSecondary" type="button">Secondary</button>
+          <button class="btn btnOutline" type="button">Outline</button>
+          <button class="btn btnPrimary" type="button" disabled>Disabled</button>
+          <a class="btn btnPrimary" href="#buttons">Link button <svg class="icon" aria-hidden="true"><use href="#iconArrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CARDS ========== -->
+    <section class="dsSection" id="cards" aria-labelledby="cardsTitle">
+      <div class="container">
+        <h2 class="textH1" id="cardsTitle">Cards</h2>
+        <p class="textMuted">Radius 16px, soft shadow, lifts 4px on hover. Images are CSS and SVG placeholders, never photos.</p>
+
+        <div class="demoGrid cols3">
+          <article class="card">
+            <div class="imgPlaceholder" aria-hidden="true">
+              <svg viewBox="0 0 120 200" style="--bottleLiquid: var(--colorSecondary)"><use href="#illBottle"/></svg>
+            </div>
+            <div class="cardBody">
+              <span class="badge">Concept</span>
+              <h3 class="textH3">Root Fire</h3>
+              <p class="textBodySm textMuted">Ginger, lemon and a pinch of cayenne.</p>
+              <div class="cardFooter"><span class="cardPrice">$7.50</span><button class="btn btnPrimary btnSm" type="button">Add</button></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="imgPlaceholder imgGreen" aria-hidden="true">
+              <svg viewBox="0 0 120 200" style="--bottleLiquid: var(--colorAccent)"><use href="#illBottle"/></svg>
+            </div>
+            <div class="cardBody">
+              <span class="badge">Concept</span>
+              <h3 class="textH3">Sunrise Zest</h3>
+              <p class="textBodySm textMuted">Orange, carrot and fresh ginger.</p>
+              <div class="cardFooter"><span class="cardPrice">$7.50</span><button class="btn btnPrimary btnSm" type="button">Add</button></div>
+            </div>
+          </article>
+
+          <article class="cardFeature">
+            <span class="iconWrap" aria-hidden="true"><svg class="icon"><use href="#iconSnow"/></svg></span>
+            <h3 class="textH4">Feature card</h3>
+            <p class="textBodySm">Oat background, no shadow. Used for benefits with an icon, short title and one sentence.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ICONS ========== -->
+    <section class="dsSection" id="icons" aria-labelledby="iconsTitle">
+      <div class="container">
+        <h2 class="textH1" id="iconsTitle">Icons</h2>
+        <p class="textMuted">24px grid, 1.75px rounded stroke, drawn in <span class="onPage">currentColor</span> so they inherit text color. Decorative icons use <span class="onPage">aria-hidden="true"</span>.</p>
+        <div class="iconRowDemo">
+          <div class="iconCell"><span class="iconWrap"><svg class="icon" aria-hidden="true"><use href="#iconRoot"/></svg></span><span class="textBodySm">Root</span></div>
+          <div class="iconCell"><span class="iconWrap"><svg class="icon" aria-hidden="true"><use href="#iconCitrus"/></svg></span><span class="textBodySm">Citrus</span></div>
+          <div class="iconCell"><span class="iconWrap"><svg class="icon" aria-hidden="true"><use href="#iconLeaf"/></svg></span><span class="textBodySm">Leaf</span></div>
+          <div class="iconCell"><span class="iconWrap"><svg class="icon" aria-hidden="true"><use href="#iconDrop"/></svg></span><span class="textBodySm">Drop</span></div>
+          <div class="iconCell"><span class="iconWrap"><svg class="icon" aria-hidden="true"><use href="#iconSnow"/></svg></span><span class="textBodySm">Cold</span></div>
+          <div class="iconCell"><span class="iconWrap iconWrapSoft"><svg class="icon" aria-hidden="true"><use href="#iconBottle"/></svg></span><span class="textBodySm">Bottle</span></div>
+          <div class="iconCell"><span class="iconWrap iconWrapSoft"><svg class="icon" aria-hidden="true"><use href="#iconArrow"/></svg></span><span class="textBodySm">Arrow</span></div>
+          <div class="iconCell"><span class="iconWrap iconWrapSoft"><svg class="icon" aria-hidden="true"><use href="#iconPlus"/></svg></span><span class="textBodySm">Plus</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SPACING ========== -->
+    <section class="dsSection" id="spacing" aria-labelledby="spacingTitle">
+      <div class="container">
+        <h2 class="textH1" id="spacingTitle">Spacing</h2>
+        <p class="textMuted">An 8-point grid. Everything snaps to multiples of 8px, with a single 4px half-step for tight details. Token numbers count in 8px units (<span class="onPage">--space3</span> = 3 × 8 = 24px).</p>
+        <div>
+          <div class="spaceRow"><code>--space05</code><span class="textBodySm">4px</span><div class="spaceBar" style="--barSize: var(--space05)"></div></div>
+          <div class="spaceRow"><code>--space1</code><span class="textBodySm">8px</span><div class="spaceBar" style="--barSize: var(--space1)"></div></div>
+          <div class="spaceRow"><code>--space2</code><span class="textBodySm">16px</span><div class="spaceBar" style="--barSize: var(--space2)"></div></div>
+          <div class="spaceRow"><code>--space3</code><span class="textBodySm">24px</span><div class="spaceBar" style="--barSize: var(--space3)"></div></div>
+          <div class="spaceRow"><code>--space4</code><span class="textBodySm">32px</span><div class="spaceBar" style="--barSize: var(--space4)"></div></div>
+          <div class="spaceRow"><code>--space6</code><span class="textBodySm">48px</span><div class="spaceBar" style="--barSize: var(--space6)"></div></div>
+          <div class="spaceRow"><code>--space8</code><span class="textBodySm">64px</span><div class="spaceBar" style="--barSize: var(--space8)"></div></div>
+          <div class="spaceRow"><code>--space12</code><span class="textBodySm">96px</span><div class="spaceBar" style="--barSize: var(--space12)"></div></div>
+          <div class="spaceRow"><code>--space16</code><span class="textBodySm">128px</span><div class="spaceBar" style="--barSize: var(--space16)"></div></div>
+        </div>
+
+        <h3 class="textH3 dsSubhead">Usage rules</h3>
+        <ul class="ruleList">
+          <li>Space inside components: <strong>8 / 16 / 24</strong>.</li>
+          <li>Gaps between cards and grid items: <strong>16</strong> on mobile, <strong>24–32</strong> from 768px.</li>
+          <li>Section padding: <strong>64</strong> on mobile, <strong>96</strong> from 768px.</li>
+          <li>Page side gutter: <strong>16</strong> on mobile, <strong>32</strong> from 768px. Content max width 1152px.</li>
+          <li>Minimum tap target: <strong>44px</strong>.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== RADIUS ========== -->
+    <section class="dsSection" id="radius" aria-labelledby="radiusTitle">
+      <div class="container">
+        <h2 class="textH1" id="radiusTitle">Corner radius</h2>
+        <p class="textMuted">Four values only. Rounder shapes feel friendlier and echo the fruit.</p>
+        <div class="radiusGrid">
+          <div class="radiusCell"><div class="radiusBox" style="--radiusValue: var(--radiusSm)"></div><strong>Small · 8px</strong><span class="textCaption">--radiusSm · inputs, chips</span></div>
+          <div class="radiusCell"><div class="radiusBox" style="--radiusValue: var(--radiusMd)"></div><strong>Medium · 16px</strong><span class="textCaption">--radiusMd · cards</span></div>
+          <div class="radiusCell"><div class="radiusBox" style="--radiusValue: var(--radiusLg)"></div><strong>Large · 24px</strong><span class="textCaption">--radiusLg · panels, hero art</span></div>
+          <div class="radiusCell"><div class="radiusBox" style="--radiusValue: var(--radiusPill)"></div><strong>Pill · 999px</strong><span class="textCaption">--radiusPill · buttons, badges</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="dsFooter onDark">
+    <div class="container">
+      <p class="textBodySm">Zest &amp; Root is a fictional brand created for a portfolio concept. No real products, clients or results.</p>
+    </div>
+  </footer>
+</body>
+</html>

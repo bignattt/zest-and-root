@@ -1,0 +1,99 @@
+/* ==========================================================
+   Zest & Root — design tokens (camelCase naming)
+   Every color, font size, spacing and radius value lives here.
+   Concept project. Not a real brand.
+   ========================================================== */
+
+:root {
+  /* ---------- Color: brand ---------- */
+  --colorPrimary: #1f4d3a;          /* Root Green */
+  --colorPrimaryHover: #173b2d;
+  --colorPrimaryPressed: #10291f;
+  --colorSecondary: #f59e2a;        /* Zest Orange */
+  --colorSecondaryHover: #e38c17;
+  --colorSecondaryPressed: #c97a10;
+  --colorAccent: #f4d35e;           /* Lemon Zest */
+
+  /* ---------- Color: neutrals ---------- */
+  --colorInk: #1b2a22;              /* Neutral 900 — body text */
+  --colorBark: #5a5143;             /* Neutral 600 — secondary text */
+  --colorStone: #b9b09c;            /* Neutral 300 — decorative borders only (2:1 on cream, never for text) */
+  --colorOat: #efe6d2;              /* Neutral 100 — cards, sections */
+  --colorCream: #fbf6ea;            /* Neutral 50  — page background */
+  --colorWhite: #ffffff;
+
+  /* ---------- Color: roles (use these in components) ---------- */
+  --colorBackground: var(--colorCream);
+  --colorSurface: var(--colorWhite);
+  --colorSurfaceAlt: var(--colorOat);
+  --colorText: var(--colorInk);
+  --colorTextMuted: var(--colorBark);
+  --colorTextOnPrimary: var(--colorWhite);
+  --colorTextOnSecondary: var(--colorInk);
+  --colorBorder: var(--colorStone);
+  --colorFocus: var(--colorInk);           /* focus ring on light surfaces */
+  --colorFocusOnDark: var(--colorAccent);  /* focus ring on Root Green */
+
+  /* ---------- Typography ---------- */
+  --fontHeading: "Fraunces", Georgia, "Times New Roman", serif;
+  --fontBody: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --fontWeightRegular: 400;
+  --fontWeightMedium: 500;
+  --fontWeightBold: 700;
+
+  /* Type scale: 12 / 14 / 16 / 20 / 24 / 32 / 48 / 64 (large sizes are fluid) */
+  --fontSizeXs: 0.75rem;                                   /* 12 */
+  --fontSizeSm: 0.875rem;                                  /* 14 */
+  --fontSizeBase: 1rem;                                    /* 16 */
+  --fontSizeMd: 1.25rem;                                   /* 20 */
+  --fontSizeLg: 1.5rem;                                    /* 24 */
+  --fontSizeXl: clamp(1.75rem, 1.5rem + 1.2vw, 2rem);      /* 28 → 32 */
+  --fontSize2xl: clamp(2.25rem, 1.8rem + 2vw, 3rem);       /* 36 → 48 */
+  --fontSize3xl: clamp(2.75rem, 2rem + 3.5vw, 4rem);       /* 44 → 64 */
+
+  --lineHeightTight: 1.1;
+  --lineHeightSnug: 1.25;
+  --lineHeightBody: 1.6;
+
+  --letterSpacingTight: -0.02em;
+  --letterSpacingWide: 0.12em;
+
+  /* ---------- Spacing: 8-point grid (4 is the only half-step) ---------- */
+  --space05: 0.25rem;   /* 4   */
+  --space1: 0.5rem;     /* 8   */
+  --space2: 1rem;       /* 16  */
+  --space3: 1.5rem;     /* 24  */
+  --space4: 2rem;       /* 32  */
+  --space6: 3rem;       /* 48  */
+  --space8: 4rem;       /* 64  */
+  --space12: 6rem;      /* 96  */
+  --space16: 8rem;      /* 128 */
+
+  /* ---------- Corner radius ---------- */
+  --radiusSm: 0.5rem;   /* 8   inputs, small chips */
+  --radiusMd: 1rem;     /* 16  cards */
+  --radiusLg: 1.5rem;   /* 24  large panels, hero art */
+  --radiusPill: 999px;  /*     buttons, badges */
+
+  /* ---------- Elevation ---------- */
+  --shadowSm: 0 1px 2px rgb(27 42 34 / 0.08), 0 2px 8px rgb(27 42 34 / 0.06);
+  --shadowMd: 0 4px 12px rgb(27 42 34 / 0.10), 0 12px 32px rgb(27 42 34 / 0.08);
+
+  /* ---------- Motion ---------- */
+  --durationFast: 150ms;
+  --durationBase: 250ms;
+  --durationSlow: 600ms;
+  --easeOut: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* ---------- Layout ---------- */
+  --containerMax: 72rem;      /* 1152 */
+  --containerPadding: var(--space2);
+  --tapTargetMin: 2.75rem;    /* 44px minimum touch target */
+  --focusRingWidth: 3px;
+  --focusRingOffset: 2px;
+}
+
+@media (min-width: 768px) {
+  :root { --containerPadding: var(--space4); }
+}
