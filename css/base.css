@@ -95,3 +95,8 @@ ul[role="list"], ol[role="list"] { list-style: none; margin: 0; padding: 0; }
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ---------- Headings on Root Green ---------- */
+.onDark .textDisplay, .onDark .textH1, .onDark .textH2,
+.onDark .textH3, .onDark .textH4 { color: var(--colorTextOnPrimary); }
+.onDark .textEyebrow { color: var(--colorAccent); }

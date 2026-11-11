@@ -123,3 +123,8 @@
 .bottleCap { fill: var(--colorInk); }
 .bottleLabel { fill: var(--colorPrimary); }
 .bottleShine { fill: var(--colorWhite); opacity: 0.55; }
+
+/* Equal-height product cards: footer sits at the bottom */
+.card { display: flex; flex-direction: column; }
+.card .cardBody { flex: 1; }
+.card .cardFooter { margin-top: auto; padding-top: var(--space2); }

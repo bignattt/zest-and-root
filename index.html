@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zest &amp; Root — Cold-pressed ginger and citrus juice (Concept)</title>
+  <meta name="description" content="Landing page concept for Zest &amp; Root, a fictional cold-pressed ginger and citrus juice brand. Portfolio project.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+  <a class="skipLink" href="#main">Skip to content</a>
+
+  <!-- SVG icon sprite (inline so the page works when opened straight from disk) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="iconRoot" viewBox="0 0 24 24"><path d="M3 15.500c0-2 1.500-3.500 3.500-3.500H8l1.500-3H13l1 3h2.500c2.500 0 4.500 1.500 4.500 3.500S19 19 16.500 19H7c-2.500 0-4-1.500-4-3.500Z"/><path d="M11 9V5M11 5 9 3M11 5l2-2M8 15.500h2M13 16h3"/></symbol>
+    <symbol id="iconCitrus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5.5"/><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></symbol>
+    <symbol id="iconLeaf" viewBox="0 0 24 24"><path d="M20 4c-9 0-15 4-15 11 0 2 .6 3.800 1.600 5C13 20 20 15 20 4Z"/><path d="M4 21c2-5 5-8 10-11"/></symbol>
+    <symbol id="iconDrop" viewBox="0 0 24 24"><path d="M12 3c4 5 6.500 8.200 6.500 11.500a6.500 6.500 0 0 1-13 0C5.500 11.200 8 8 12 3Z"/><path d="M9 15a3 3 0 0 0 3 3"/></symbol>
+    <symbol id="iconSnow" viewBox="0 0 24 24"><path d="M12 2v20M3.300 7l17.400 10M3.300 17 20.700 7M9 3.500l3 2.500 3-2.500M9 20.500l3-2.500 3 2.500"/></symbol>
+    <symbol id="iconBottle" viewBox="0 0 24 24"><path d="M10 2h4v3l1.500 2.500c.3.500.5 1 .5 1.600V20a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V9.100c0-.6.200-1.100.5-1.600L10 5V2Z"/><path d="M8 13h8"/></symbol>
+    <symbol id="iconArrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="iconPlus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="iconMenu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="iconClose" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="illBottle" viewBox="0 0 120 200">
+      <rect class="bottleCap" x="44" y="6" width="32" height="20" rx="4"/>
+      <path class="bottleBody" d="M48 26h24v22c0 8 18 14 18 30v100c0 10-8 18-18 18H48c-10 0-18-8-18-18V78c0-16 18-22 18-30V26Z"/>
+      <path class="bottleLiquid" d="M32 92h56v86c0 10-8 18-18 18H50c-10 0-18-8-18-18V92Z"/>
+      <rect class="bottleLabel" x="40" y="116" width="40" height="50" rx="6"/>
+      <circle cx="60" cy="134" r="7" fill="#F4D35E"/>
+      <rect x="47" y="148" width="26" height="3" rx="1.500" fill="#FBF6EA"/>
+      <rect x="51" y="155" width="18" height="3" rx="1.500" fill="#FBF6EA"/>
+      <rect class="bottleShine" x="38" y="84" width="5" height="60" rx="2.500"/>
+    </symbol>
+  </svg>
+
+  <!-- ========== NAV ========== -->
+  <header class="siteNav onDark">
+    <div class="container navBar">
+      <a class="brand" href="#top" aria-label="Zest and Root, back to top">
+        <svg class="brandMark" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22"/><path d="M24 10c-6 4-9 9-9 14a9 9 0 0 0 18 0c0-5-3-10-9-14ZM24 18v18M24 26l-5-4M24 30l5-4"/></svg>
+        Zest &amp; Root
+      </a>
+      <button class="navToggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
+        <svg class="icon iconMenu" aria-hidden="true"><use href="#iconMenu"/></svg>
+        <svg class="icon iconClose" aria-hidden="true"><use href="#iconClose"/></svg>
+      </button>
+      <nav class="navMenu" id="navMenu" aria-label="Main">
+        <ul class="navLinks">
+          <li><a href="#range">The range</a></li>
+          <li><a href="#benefits">Benefits</a></li>
+          <li><a href="#story">Ingredients</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <a class="btn btnSecondary" href="#range">Shop the range</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="top" aria-labelledby="heroTitle">
+      <div class="container heroGrid">
+        <div class="heroCopy">
+          <p class="textEyebrow">Cold-pressed ginger &amp; citrus</p>
+          <h1 class="textDisplay" id="heroTitle">Root-deep flavor. Zesty by nature.</h1>
+          <p class="textBodyLg">Fresh ginger root pressed with whole citrus, in small batches. A bright, spicy juice with a short ingredient list.</p>
+          <div class="heroActions">
+            <a class="btn btnPrimary" href="#range">Shop the range <svg class="icon" aria-hidden="true"><use href="#iconArrow"/></svg></a>
+            <a class="btn btnOutline" href="#story">Our ingredients</a>
+          </div>
+          <p class="textCaption heroNote">Concept project: Zest &amp; Root is a fictional brand and nothing here is for sale.</p>
+        </div>
+        <div class="heroArt" aria-hidden="true">
+          <div class="heroBottles">
+            <svg viewBox="0 0 120 200" style="--bottleLiquid: var(--colorAccent)"><use href="#illBottle"/></svg>
+            <svg viewBox="0 0 120 200" style="--bottleLiquid: var(--colorSecondary)"><use href="#illBottle"/></svg>
+            <svg viewBox="0 0 120 200" style="--bottleLiquid: var(--colorOat)"><use href="#illBottle"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PRODUCTS ========== -->
+    <section class="section" id="range" aria-labelledby="rangeTitle">
+      <div class="container">
+        <div class="sectionHead">
+          <p class="textEyebrow">The range</p>
+          <h2 class="textH1" id="rangeTitle">Three bottles, one root</h2>
+          <p class="textBodyLg textMuted">Every recipe starts with ginger. The citrus does the rest.</p>
+        </div>
+        <div class="productGrid">
+          <article class="card">
+            <div class="imgPlaceholder" aria-hidden="true"><svg viewBox="0 0 120 200" style="--bottleLiquid: var(--colorSecondary)"><use href="#illBottle"/></svg></div>
+            <div class="cardBody">
+              <span class="badge">Concept recipe</span>
+              <h3 class="textH3">Root Fire</h3>
+              <p class="textBodySm textMuted">Bold and warming, with a gentle kick of heat.</p>
+              <ul class="cardIngredients" aria-label="Ingredients"><li>Ginger</li><li>Lemon</li><li>Cayenne</li></ul>
+              <div class="cardFooter"><span class="cardPrice">$7.50</span><button class="btn btnPrimary btnSm" type="button" aria-label="Add Root Fire to cart">Add</button></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="imgPlaceholder imgGreen" aria-hidden="true"><svg viewBox="0 0 120 200" style="--bottleLiquid: var(--colorAccent)"><use href="#illBottle"/></svg></div>
+            <div class="cardBody">
+              <span class="badge">Concept recipe</span>
+              <h3 class="textH3">Sunrise Zest</h3>
+              <p class="textBodySm textMuted">Sweet orange and carrot, lifted by fresh ginger.</p>
+              <ul class="cardIngredients" aria-label="Ingredients"><li>Orange</li><li>Carrot</li><li>Ginger</li></ul>
+              <div class="cardFooter"><span class="cardPrice">$7.50</span><button class="btn btnPrimary btnSm" type="button" aria-label="Add Sunrise Zest to cart">Add</button></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="imgPlaceholder imgOat" aria-hidden="true"><svg viewBox="0 0 120 200" style="--bottleLiquid: var(--colorPrimary)"><use href="#illBottle"/></svg></div>
+            <div class="cardBody">
+              <span class="badge">Concept recipe</span>
+              <h3 class="textH3">Green Citrus</h3>
+              <p class="textBodySm textMuted">Crisp lime and cucumber with cool mint.</p>
+              <ul class="cardIngredients" aria-label="Ingredients"><li>Lime</li><li>Cucumber</li><li>Mint</li><li>Ginger</li></ul>
+              <div class="cardFooter"><span class="cardPrice">$7.50</span><button class="btn btnPrimary btnSm" type="button" aria-label="Add Green Citrus to cart">Add</button></div>
+            </div>
+          </article>
+        </div>
+        <p class="textCaption productNote">Placeholder products and prices for a design concept.</p>
+      </div>
+    </section>
+
+    <!-- ========== BENEFITS ========== -->
+    <section class="section bgOat" id="benefits" aria-labelledby="benefitsTitle">
+      <div class="container">
+        <div class="sectionHead">
+          <p class="textEyebrow">Why Zest &amp; Root</p>
+          <h2 class="textH1" id="benefitsTitle">Simple juice, made carefully</h2>
+        </div>
+        <div class="benefitGrid">
+          <article class="cardFeature"><span class="iconWrap" aria-hidden="true"><svg class="icon"><use href="#iconSnow"/></svg></span><h3 class="textH4">Cold-pressed</h3><p class="textBodySm">Pressed without heat, so the flavor stays bright and fresh.</p></article>
+          <article class="cardFeature"><span class="iconWrap" aria-hidden="true"><svg class="icon"><use href="#iconLeaf"/></svg></span><h3 class="textH4">Whole ingredients</h3><p class="textBodySm">Real roots, fruit and herbs. A short list you can read at a glance.</p></article>
+          <article class="cardFeature"><span class="iconWrap" aria-hidden="true"><svg class="icon"><use href="#iconDrop"/></svg></span><h3 class="textH4">Small batches</h3><p class="textBodySm">Made in small runs so every bottle tastes like the first.</p></article>
+          <article class="cardFeature"><span class="iconWrap" aria-hidden="true"><svg class="icon"><use href="#iconBottle"/></svg></span><h3 class="textH4">Reusable glass</h3><p class="textBodySm">A glass bottle that is made to be rinsed, returned and refilled.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== INGREDIENT STORY ========== -->
+    <section class="section bgPrimary onDark" id="story" aria-labelledby="storyTitle">
+      <div class="container storyGrid">
+        <div class="storyCopy">
+          <p class="textEyebrow">Ingredient story</p>
+          <h2 class="textH1" id="storyTitle">It starts underground</h2>
+          <p class="textBodyLg">Ginger is the root of everything we make. Its warmth is sharp and a little sweet, so we pair it with citrus that is bright enough to match.</p>
+          <p class="textBody">Our concept recipes keep the list short: a root, a fruit or two, and nothing else. This is the idea the whole brand is built around.</p>
+          <ul class="ingredientList">
+            <li><span class="iconWrap" aria-hidden="true"><svg class="icon"><use href="#iconRoot"/></svg></span><div><strong>Ginger root</strong><span>Warm, peppery and fragrant. The base of every bottle.</span></div></li>
+            <li><span class="iconWrap" aria-hidden="true"><svg class="icon"><use href="#iconCitrus"/></svg></span><div><strong>Lemon, orange and lime</strong><span>Juicy acidity that balances the heat.</span></div></li>
+            <li><span class="iconWrap" aria-hidden="true"><svg class="icon"><use href="#iconLeaf"/></svg></span><div><strong>Fresh herbs</strong><span>A little mint to finish the green recipe.</span></div></li>
+          </ul>
+        </div>
+        <div class="storyArt" aria-hidden="true">
+          <div class="blob blobA"><svg class="icon"><use href="#iconRoot"/></svg></div>
+          <div class="blob blobB"><svg class="icon"><use href="#iconCitrus"/></svg></div>
+          <div class="blob blobC"><svg class="icon"><use href="#iconLeaf"/></svg></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS (PLACEHOLDER) ========== -->
+    <section class="section" id="reviews" aria-labelledby="reviewsTitle">
+      <div class="container">
+        <div class="sectionHead">
+          <p class="textEyebrow">Reviews</p>
+          <h2 class="textH1" id="reviewsTitle">What people might say</h2>
+          <p class="textBodySm textMuted">Placeholder text only. These are not real customers or real reviews.</p>
+        </div>
+        <div class="testimonialGrid">
+          <figure class="quote"><span class="quoteMark" aria-hidden="true">“</span><blockquote style="margin:0"><p>Placeholder testimonial. This is where a short, honest comment about the flavor would go.</p></blockquote><footer><span class="avatar" aria-hidden="true"></span><figcaption><span class="quoteName">Customer Name</span><span class="textCaption">Placeholder · not a real person</span></figcaption></footer></figure>
+          <figure class="quote"><span class="quoteMark" aria-hidden="true">“</span><blockquote style="margin:0"><p>Placeholder testimonial. A line about how the juice fits into a morning routine.</p></blockquote><footer><span class="avatar" aria-hidden="true"></span><figcaption><span class="quoteName">Customer Name</span><span class="textCaption">Placeholder · not a real person</span></figcaption></footer></figure>
+          <figure class="quote"><span class="quoteMark" aria-hidden="true">“</span><blockquote style="margin:0"><p>Placeholder testimonial. A short note about the bottle, the packaging or the delivery.</p></blockquote><footer><span class="avatar" aria-hidden="true"></span><figcaption><span class="quoteName">Customer Name</span><span class="textCaption">Placeholder · not a real person</span></figcaption></footer></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="section bgOat" id="faq" aria-labelledby="faqTitle">
+      <div class="container">
+        <div class="sectionHead isCentered">
+          <p class="textEyebrow">FAQ</p>
+          <h2 class="textH1" id="faqTitle">Good questions</h2>
+          <p class="textBodySm textMuted">Concept answers for a fictional brand.</p>
+        </div>
+        <div class="faqList">
+          <details class="faqItem" name="faq"><summary>What does cold-pressed mean?<svg class="icon" aria-hidden="true"><use href="#iconPlus"/></svg></summary><p class="faqAnswer textBody">Cold-pressed juice is squeezed with pressure instead of being heated, so the flavor stays fresh.</p></details>
+          <details class="faqItem" name="faq"><summary>How spicy is it?<svg class="icon" aria-hidden="true"><use href="#iconPlus"/></svg></summary><p class="faqAnswer textBody">Root Fire has the most kick, with ginger and a pinch of cayenne. Sunrise Zest and Green Citrus are milder.</p></details>
+          <details class="faqItem" name="faq"><summary>How should I store it?<svg class="icon" aria-hidden="true"><use href="#iconPlus"/></svg></summary><p class="faqAnswer textBody">In this concept, bottles live in the fridge and are best finished within a few days of opening.</p></details>
+          <details class="faqItem" name="faq"><summary>Can I buy it?<svg class="icon" aria-hidden="true"><use href="#iconPlus"/></svg></summary><p class="faqAnswer textBody">Not yet. Zest &amp; Root is a fictional brand made for a design portfolio, so there is nothing to purchase.</p></details>
+          <details class="faqItem" name="faq"><summary>Who designed this?<svg class="icon" aria-hidden="true"><use href="#iconPlus"/></svg></summary><p class="faqAnswer textBody">Victory, a graphic and product designer, built it as a portfolio concept. The design system is in <a href="design-system.html">design-system.html</a>.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="siteFooter onDark">
+    <div class="container">
+      <div class="footerGrid">
+        <div>
+          <a class="brand" href="#top"><svg class="brandMark" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22"/><path d="M24 10c-6 4-9 9-9 14a9 9 0 0 0 18 0c0-5-3-10-9-14ZM24 18v18M24 26l-5-4M24 30l5-4"/></svg>Zest &amp; Root</a>
+          <p class="textBodySm">Cold-pressed ginger and citrus juice. A concept brand.</p>
+          <form class="notifyForm" id="notifyForm">
+            <label class="srOnly" for="notifyEmail">Email address</label>
+            <input id="notifyEmail" type="email" placeholder="you@example.com" required>
+            <button class="btn btnSecondary" type="submit">Notify me</button>
+          </form>
+          <p class="textBodySm notifyMsg" id="notifyMsg" role="status"></p>
+        </div>
+        <div>
+          <h2 class="footerTitle">Explore</h2>
+          <ul class="footerList"><li><a href="#range">The range</a></li><li><a href="#benefits">Benefits</a></li><li><a href="#story">Ingredients</a></li><li><a href="#faq">FAQ</a></li></ul>
+        </div>
+        <div>
+          <h2 class="footerTitle">Project</h2>
+          <ul class="footerList"><li><a href="design-system.html">Design system</a></li><li><a href="README.md">About the concept</a></li></ul>
+        </div>
+      </div>
+      <div class="footerBottom">
+        <p class="textBodySm">Zest &amp; Root is a fictional brand created for a portfolio concept. No real products, clients, reviews or results.</p>
+        <p class="textCaption">Designed and built by Victory. Fonts: Fraunces and DM Sans (Google Fonts).</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
