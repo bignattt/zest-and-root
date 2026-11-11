@@ -141,3 +141,5 @@
 }
 .card:hover .imgPhoto { transform: scale(1.04); }
 @media (prefers-reduced-motion: reduce) { .card:hover .imgPhoto { transform: none; } }
+
+.cardNickname { margin: 0; font-size: var(--fontSizeSm); font-weight: var(--fontWeightBold); text-transform: uppercase; letter-spacing: var(--letterSpacingWide); color: var(--colorBark); }

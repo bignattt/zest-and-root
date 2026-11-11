@@ -22,7 +22,7 @@ To take screenshots at the three design widths, open Chrome DevTools, switch to 
 **Brand personality:** zesty, grounded, honest.
 The look is bright and energetic like citrus, and earthy and plain-spoken like a root. Copy is short and avoids health claims. Benefits talk about how the juice is made, not what it does for the body.
 
-**Concept products (all fictional):** Root Fire (ginger, lemon, cayenne), Sunrise Zest (orange, carrot, ginger), Green Citrus (lime, cucumber, mint, ginger).
+**Concept products (all fictional):** Ginger Lemon "Root Fire" (ginger, lemon, cayenne), Carrot Orange "Sunrise Zest" (orange, carrot, ginger), Lime Cucumber Mint "Green Citrus" (lime, cucumber, mint, ginger). The names match the labels on the AI-generated product images; the nicknames are the brand's internal recipe names.
 
 ## Design decisions
 
@@ -35,7 +35,7 @@ The look is bright and energetic like citrus, and earthy and plain-spoken like a
 | Spacing | 8-point grid (4, 8, 16, 24, 32, 48, 64, 96, 128), 4px as the only half-step | Predictable rhythm and easy handoff. |
 | Radius | 8 / 16 / 24 / pill | Round shapes echo fruit. |
 | Naming | camelCase everywhere: `--colorPrimary`, `--space3`, `.btnPrimary`, `.cardFeature` | One style, no mixing. |
-| Imagery | CSS shapes and SVG bottle illustrations, no photos | No copyright issues, and every placeholder looks like the same family. |
+| Imagery | AI-generated product photography (hero and three bottles) with SVG illustrations as fallback and for the ingredient story | Photos give realism. The SVG fallback keeps the page working if an image is missing. |
 | Accessibility | Skip link, visible focus ring (switches color on dark backgrounds), 44px tap targets, native `<details>` FAQ, labelled landmarks, reduced-motion support | Usable by keyboard and screen readers. |
 | Motion | 150 / 250 / 600 ms, one easing curve, scroll reveal once per element, one slow float on the hero | Subtle polish. Off when the visitor prefers reduced motion. |
 
