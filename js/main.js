@@ -35,3 +35,25 @@ if (notifyForm && notifyMsg) {
     notifyForm.reset();
   });
 }
+
+// ---- Scroll reveal ----
+// Elements marked data-reveal fade up once as they enter the screen.
+const revealItems = document.querySelectorAll("[data-reveal]");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (!("IntersectionObserver" in window) || reduceMotion) {
+  revealItems.forEach((item) => item.classList.add("isVisible"));
+} else {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("isVisible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+  );
+  revealItems.forEach((item) => observer.observe(item));
+}

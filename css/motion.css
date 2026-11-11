@@ -1,0 +1,66 @@
+/* ==========================================================
+   Zest & Root — motion (hover + scroll animations)
+   Subtle by design. Durations and easing come from tokens.css.
+   Everything is switched off for people who prefer reduced motion.
+   ========================================================== */
+
+/* ---------- Scroll reveal ----------
+   Only hides content when JavaScript is running (html.js), so the
+   page is fully visible without it. */
+@keyframes revealUp {
+  from { opacity: 0; translate: 0 var(--space3); }
+  to { opacity: 1; translate: 0 0; }
+}
+.js [data-reveal]:not(.isVisible) { opacity: 0; translate: 0 var(--space3); }
+.js [data-reveal].isVisible {
+  animation: revealUp var(--durationSlow) var(--easeOut) var(--revealDelay, 0ms) backwards;
+}
+
+/* ---------- Hero bottles: slow float ---------- */
+@keyframes bottleFloat {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 calc(var(--space1) * -1); }
+}
+.heroBottles svg { animation: bottleFloat 6s ease-in-out infinite; }
+.heroBottles svg:nth-child(2) { animation-delay: -2s; }
+.heroBottles svg:nth-child(3) { animation-delay: -4s; }
+
+/* ---------- Hover: cards and bottles ---------- */
+.imgPlaceholder > svg { transition: transform var(--durationBase) var(--easeOut); }
+.card:hover .imgPlaceholder > svg { transform: translateY(calc(var(--space05) * -1)) rotate(-3deg); }
+
+.cardFeature, .quote {
+  transition: transform var(--durationBase) var(--easeOut), box-shadow var(--durationBase) var(--easeOut);
+}
+.cardFeature:hover, .quote:hover { transform: translateY(calc(var(--space05) * -1)); box-shadow: var(--shadowMd); }
+.cardFeature .iconWrap { transition: transform var(--durationBase) var(--easeOut); }
+.cardFeature:hover .iconWrap { transform: rotate(-8deg) scale(1.08); }
+
+/* ---------- Hover: buttons, links, nav ---------- */
+.btn .icon { transition: transform var(--durationFast) var(--easeOut); }
+.btn:hover .icon { transform: translateX(var(--space05)); }
+.navLinks a { transition: background-color var(--durationFast) var(--easeOut); }
+.footerList a { transition: color var(--durationFast) var(--easeOut); }
+
+/* ---------- Ingredient story blobs ---------- */
+.storyArt .blob { transition: transform var(--durationSlow) var(--easeOut); }
+.storyArt:hover .blobA { transform: scale(1.05) translate(var(--space1), var(--space1)); }
+.storyArt:hover .blobB { transform: scale(1.08) translateX(calc(var(--space1) * -1)); }
+.storyArt:hover .blobC { transform: scale(1.06) translateY(calc(var(--space1) * -1)); }
+
+/* ---------- FAQ open ---------- */
+@keyframes faqOpen {
+  from { opacity: 0; transform: translateY(calc(var(--space1) * -1)); }
+  to { opacity: 1; transform: none; }
+}
+.faqItem[open] .faqAnswer { animation: faqOpen var(--durationBase) var(--easeOut); }
+
+/* ---------- Reduced motion: no movement at all ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal]:not(.isVisible) { opacity: 1; translate: none; }
+  .js [data-reveal].isVisible { animation: none; }
+  .heroBottles svg, .faqItem[open] .faqAnswer { animation: none; }
+  .card:hover, .cardFeature:hover, .quote:hover,
+  .card:hover .imgPlaceholder > svg, .cardFeature:hover .iconWrap,
+  .storyArt:hover .blob, .btn:hover, .btn:hover .icon { transform: none; }
+}

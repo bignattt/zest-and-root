@@ -12,13 +12,15 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/motion.css">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
   <a class="skipLink" href="#main">Skip to content</a>
 
   <!-- SVG icon sprite (inline so the page works when opened straight from disk) -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-    <symbol id="iconRoot" viewBox="0 0 24 24"><path d="M3 15.500c0-2 1.500-3.500 3.500-3.500H8l1.500-3H13l1 3h2.500c2.500 0 4.500 1.500 4.500 3.500S19 19 16.500 19H7c-2.500 0-4-1.500-4-3.500Z"/><path d="M11 9V5M11 5 9 3M11 5l2-2M8 15.500h2M13 16h3"/></symbol>
+    <symbol id="iconRoot" viewBox="0 0 24 24"><path d="M12 14V6"/><path d="M12 9c0-3 2-5 6-5 0 3.500-2.500 5.500-6 5Z"/><path d="M12 12c0-2.500-1.500-4-4.500-4 0 3 1.800 4.300 4.500 4Z"/><path d="M12 14v3M12 17l-3.500 4M12 17l3.500 4M12 17.500v3.500"/></symbol>
     <symbol id="iconCitrus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5.5"/><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></symbol>
     <symbol id="iconLeaf" viewBox="0 0 24 24"><path d="M20 4c-9 0-15 4-15 11 0 2 .6 3.800 1.600 5C13 20 20 15 20 4Z"/><path d="M4 21c2-5 5-8 10-11"/></symbol>
     <symbol id="iconDrop" viewBox="0 0 24 24"><path d="M12 3c4 5 6.500 8.200 6.500 11.500a6.500 6.500 0 0 1-13 0C5.500 11.200 8 8 12 3Z"/><path d="M9 15a3 3 0 0 0 3 3"/></symbol>
@@ -68,7 +70,7 @@
     <!-- ========== HERO ========== -->
     <section class="hero" id="top" aria-labelledby="heroTitle">
       <div class="container heroGrid">
-        <div class="heroCopy">
+        <div class="heroCopy" data-reveal>
           <p class="textEyebrow">Cold-pressed ginger &amp; citrus</p>
           <h1 class="textDisplay" id="heroTitle">Root-deep flavor. Zesty by nature.</h1>
           <p class="textBodyLg">Fresh ginger root pressed with whole citrus, in small batches. A bright, spicy juice with a short ingredient list.</p>
@@ -78,7 +80,7 @@
           </div>
           <p class="textCaption heroNote">Concept project: Zest &amp; Root is a fictional brand and nothing here is for sale.</p>
         </div>
-        <div class="heroArt" aria-hidden="true">
+        <div class="heroArt" aria-hidden="true" data-reveal style="--revealDelay: 150ms">
           <div class="heroBottles">
             <svg viewBox="0 0 120 200" style="--bottleLiquid: var(--colorAccent)"><use href="#illBottle"/></svg>
             <svg viewBox="0 0 120 200" style="--bottleLiquid: var(--colorSecondary)"><use href="#illBottle"/></svg>
@@ -91,13 +93,13 @@
     <!-- ========== PRODUCTS ========== -->
     <section class="section" id="range" aria-labelledby="rangeTitle">
       <div class="container">
-        <div class="sectionHead">
+        <div data-reveal class="sectionHead">
           <p class="textEyebrow">The range</p>
           <h2 class="textH1" id="rangeTitle">Three bottles, one root</h2>
           <p class="textBodyLg textMuted">Every recipe starts with ginger. The citrus does the rest.</p>
         </div>
         <div class="productGrid">
-          <article class="card">
+          <article class="card" data-reveal style="--revealDelay: 0ms">
             <div class="imgPlaceholder" aria-hidden="true"><svg viewBox="0 0 120 200" style="--bottleLiquid: var(--colorSecondary)"><use href="#illBottle"/></svg></div>
             <div class="cardBody">
               <span class="badge">Concept recipe</span>
@@ -107,7 +109,7 @@
               <div class="cardFooter"><span class="cardPrice">$7.50</span><button class="btn btnPrimary btnSm" type="button" aria-label="Add Root Fire to cart">Add</button></div>
             </div>
           </article>
-          <article class="card">
+          <article class="card" data-reveal style="--revealDelay: 100ms">
             <div class="imgPlaceholder imgGreen" aria-hidden="true"><svg viewBox="0 0 120 200" style="--bottleLiquid: var(--colorAccent)"><use href="#illBottle"/></svg></div>
             <div class="cardBody">
               <span class="badge">Concept recipe</span>
@@ -117,7 +119,7 @@
               <div class="cardFooter"><span class="cardPrice">$7.50</span><button class="btn btnPrimary btnSm" type="button" aria-label="Add Sunrise Zest to cart">Add</button></div>
             </div>
           </article>
-          <article class="card">
+          <article class="card" data-reveal style="--revealDelay: 200ms">
             <div class="imgPlaceholder imgOat" aria-hidden="true"><svg viewBox="0 0 120 200" style="--bottleLiquid: var(--colorPrimary)"><use href="#illBottle"/></svg></div>
             <div class="cardBody">
               <span class="badge">Concept recipe</span>
@@ -135,15 +137,15 @@
     <!-- ========== BENEFITS ========== -->
     <section class="section bgOat" id="benefits" aria-labelledby="benefitsTitle">
       <div class="container">
-        <div class="sectionHead">
+        <div data-reveal class="sectionHead">
           <p class="textEyebrow">Why Zest &amp; Root</p>
           <h2 class="textH1" id="benefitsTitle">Simple juice, made carefully</h2>
         </div>
         <div class="benefitGrid">
-          <article class="cardFeature"><span class="iconWrap" aria-hidden="true"><svg class="icon"><use href="#iconSnow"/></svg></span><h3 class="textH4">Cold-pressed</h3><p class="textBodySm">Pressed without heat, so the flavor stays bright and fresh.</p></article>
-          <article class="cardFeature"><span class="iconWrap" aria-hidden="true"><svg class="icon"><use href="#iconLeaf"/></svg></span><h3 class="textH4">Whole ingredients</h3><p class="textBodySm">Real roots, fruit and herbs. A short list you can read at a glance.</p></article>
-          <article class="cardFeature"><span class="iconWrap" aria-hidden="true"><svg class="icon"><use href="#iconDrop"/></svg></span><h3 class="textH4">Small batches</h3><p class="textBodySm">Made in small runs so every bottle tastes like the first.</p></article>
-          <article class="cardFeature"><span class="iconWrap" aria-hidden="true"><svg class="icon"><use href="#iconBottle"/></svg></span><h3 class="textH4">Reusable glass</h3><p class="textBodySm">A glass bottle that is made to be rinsed, returned and refilled.</p></article>
+          <article class="cardFeature" data-reveal style="--revealDelay: 0ms"><span class="iconWrap" aria-hidden="true"><svg class="icon"><use href="#iconSnow"/></svg></span><h3 class="textH4">Cold-pressed</h3><p class="textBodySm">Pressed without heat, so the flavor stays bright and fresh.</p></article>
+          <article class="cardFeature" data-reveal style="--revealDelay: 100ms"><span class="iconWrap" aria-hidden="true"><svg class="icon"><use href="#iconLeaf"/></svg></span><h3 class="textH4">Whole ingredients</h3><p class="textBodySm">Real roots, fruit and herbs. A short list you can read at a glance.</p></article>
+          <article class="cardFeature" data-reveal style="--revealDelay: 200ms"><span class="iconWrap" aria-hidden="true"><svg class="icon"><use href="#iconDrop"/></svg></span><h3 class="textH4">Small batches</h3><p class="textBodySm">Made in small runs so every bottle tastes like the first.</p></article>
+          <article class="cardFeature" data-reveal style="--revealDelay: 300ms"><span class="iconWrap" aria-hidden="true"><svg class="icon"><use href="#iconBottle"/></svg></span><h3 class="textH4">Reusable glass</h3><p class="textBodySm">A glass bottle that is made to be rinsed, returned and refilled.</p></article>
         </div>
       </div>
     </section>
@@ -151,7 +153,7 @@
     <!-- ========== INGREDIENT STORY ========== -->
     <section class="section bgPrimary onDark" id="story" aria-labelledby="storyTitle">
       <div class="container storyGrid">
-        <div class="storyCopy">
+        <div class="storyCopy" data-reveal>
           <p class="textEyebrow">Ingredient story</p>
           <h2 class="textH1" id="storyTitle">It starts underground</h2>
           <p class="textBodyLg">Ginger is the root of everything we make. Its warmth is sharp and a little sweet, so we pair it with citrus that is bright enough to match.</p>
@@ -162,7 +164,7 @@
             <li><span class="iconWrap" aria-hidden="true"><svg class="icon"><use href="#iconLeaf"/></svg></span><div><strong>Fresh herbs</strong><span>A little mint to finish the green recipe.</span></div></li>
           </ul>
         </div>
-        <div class="storyArt" aria-hidden="true">
+        <div class="storyArt" aria-hidden="true" data-reveal style="--revealDelay: 150ms">
           <div class="blob blobA"><svg class="icon"><use href="#iconRoot"/></svg></div>
           <div class="blob blobB"><svg class="icon"><use href="#iconCitrus"/></svg></div>
           <div class="blob blobC"><svg class="icon"><use href="#iconLeaf"/></svg></div>
@@ -173,15 +175,15 @@
     <!-- ========== TESTIMONIALS (PLACEHOLDER) ========== -->
     <section class="section" id="reviews" aria-labelledby="reviewsTitle">
       <div class="container">
-        <div class="sectionHead">
+        <div data-reveal class="sectionHead">
           <p class="textEyebrow">Reviews</p>
           <h2 class="textH1" id="reviewsTitle">What people might say</h2>
           <p class="textBodySm textMuted">Placeholder text only. These are not real customers or real reviews.</p>
         </div>
         <div class="testimonialGrid">
-          <figure class="quote"><span class="quoteMark" aria-hidden="true">“</span><blockquote style="margin:0"><p>Placeholder testimonial. This is where a short, honest comment about the flavor would go.</p></blockquote><footer><span class="avatar" aria-hidden="true"></span><figcaption><span class="quoteName">Customer Name</span><span class="textCaption">Placeholder · not a real person</span></figcaption></footer></figure>
-          <figure class="quote"><span class="quoteMark" aria-hidden="true">“</span><blockquote style="margin:0"><p>Placeholder testimonial. A line about how the juice fits into a morning routine.</p></blockquote><footer><span class="avatar" aria-hidden="true"></span><figcaption><span class="quoteName">Customer Name</span><span class="textCaption">Placeholder · not a real person</span></figcaption></footer></figure>
-          <figure class="quote"><span class="quoteMark" aria-hidden="true">“</span><blockquote style="margin:0"><p>Placeholder testimonial. A short note about the bottle, the packaging or the delivery.</p></blockquote><footer><span class="avatar" aria-hidden="true"></span><figcaption><span class="quoteName">Customer Name</span><span class="textCaption">Placeholder · not a real person</span></figcaption></footer></figure>
+          <figure class="quote" data-reveal style="--revealDelay: 0ms"><span class="quoteMark" aria-hidden="true">“</span><blockquote style="margin:0"><p>Placeholder testimonial. This is where a short, honest comment about the flavor would go.</p></blockquote><footer><span class="avatar" aria-hidden="true"></span><figcaption><span class="quoteName">Customer Name</span><span class="textCaption">Placeholder · not a real person</span></figcaption></footer></figure>
+          <figure class="quote" data-reveal style="--revealDelay: 100ms"><span class="quoteMark" aria-hidden="true">“</span><blockquote style="margin:0"><p>Placeholder testimonial. A line about how the juice fits into a morning routine.</p></blockquote><footer><span class="avatar" aria-hidden="true"></span><figcaption><span class="quoteName">Customer Name</span><span class="textCaption">Placeholder · not a real person</span></figcaption></footer></figure>
+          <figure class="quote" data-reveal style="--revealDelay: 200ms"><span class="quoteMark" aria-hidden="true">“</span><blockquote style="margin:0"><p>Placeholder testimonial. A short note about the bottle, the packaging or the delivery.</p></blockquote><footer><span class="avatar" aria-hidden="true"></span><figcaption><span class="quoteName">Customer Name</span><span class="textCaption">Placeholder · not a real person</span></figcaption></footer></figure>
         </div>
       </div>
     </section>
@@ -189,12 +191,12 @@
     <!-- ========== FAQ ========== -->
     <section class="section bgOat" id="faq" aria-labelledby="faqTitle">
       <div class="container">
-        <div class="sectionHead isCentered">
+        <div data-reveal class="sectionHead isCentered">
           <p class="textEyebrow">FAQ</p>
           <h2 class="textH1" id="faqTitle">Good questions</h2>
           <p class="textBodySm textMuted">Concept answers for a fictional brand.</p>
         </div>
-        <div class="faqList">
+        <div class="faqList" data-reveal>
           <details class="faqItem" name="faq"><summary>What does cold-pressed mean?<svg class="icon" aria-hidden="true"><use href="#iconPlus"/></svg></summary><p class="faqAnswer textBody">Cold-pressed juice is squeezed with pressure instead of being heated, so the flavor stays fresh.</p></details>
           <details class="faqItem" name="faq"><summary>How spicy is it?<svg class="icon" aria-hidden="true"><use href="#iconPlus"/></svg></summary><p class="faqAnswer textBody">Root Fire has the most kick, with ginger and a pinch of cayenne. Sunrise Zest and Green Citrus are milder.</p></details>
           <details class="faqItem" name="faq"><summary>How should I store it?<svg class="icon" aria-hidden="true"><use href="#iconPlus"/></svg></summary><p class="faqAnswer textBody">In this concept, bottles live in the fridge and are best finished within a few days of opening.</p></details>

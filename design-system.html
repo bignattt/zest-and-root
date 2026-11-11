@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/motion.css">
   <link rel="stylesheet" href="css/designSystem.css">
 </head>
 <body>
@@ -18,7 +19,7 @@
 
   <!-- SVG icon sprite (inline so the page works when opened straight from disk) -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-    <symbol id="iconRoot" viewBox="0 0 24 24"><path d="M3 15.500c0-2 1.500-3.500 3.500-3.500H8l1.500-3H13l1 3h2.500c2.500 0 4.500 1.500 4.500 3.500S19 19 16.500 19H7c-2.500 0-4-1.500-4-3.500Z"/><path d="M11 9V5M11 5 9 3M11 5l2-2M8 15.500h2M13 16h3"/></symbol>
+    <symbol id="iconRoot" viewBox="0 0 24 24"><path d="M12 14V6"/><path d="M12 9c0-3 2-5 6-5 0 3.500-2.500 5.500-6 5Z"/><path d="M12 12c0-2.500-1.500-4-4.500-4 0 3 1.800 4.300 4.500 4Z"/><path d="M12 14v3M12 17l-3.500 4M12 17l3.500 4M12 17.500v3.500"/></symbol>
     <symbol id="iconCitrus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5.5"/><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></symbol>
     <symbol id="iconLeaf" viewBox="0 0 24 24"><path d="M20 4c-9 0-15 4-15 11 0 2 .6 3.800 1.600 5C13 20 20 15 20 4Z"/><path d="M4 21c2-5 5-8 10-11"/></symbol>
     <symbol id="iconDrop" viewBox="0 0 24 24"><path d="M12 3c4 5 6.500 8.200 6.500 11.500a6.500 6.500 0 0 1-13 0C5.500 11.200 8 8 12 3Z"/><path d="M9 15a3 3 0 0 0 3 3"/></symbol>
@@ -58,6 +59,7 @@
         <li><a href="#icons">Icons</a></li>
         <li><a href="#spacing">Spacing</a></li>
         <li><a href="#radius">Radius</a></li>
+        <li><a href="#motion">Motion</a></li>
       </ul>
     </div>
   </nav>
@@ -292,6 +294,36 @@
           <div class="radiusCell"><div class="radiusBox" style="--radiusValue: var(--radiusMd)"></div><strong>Medium · 16px</strong><span class="textCaption">--radiusMd · cards</span></div>
           <div class="radiusCell"><div class="radiusBox" style="--radiusValue: var(--radiusLg)"></div><strong>Large · 24px</strong><span class="textCaption">--radiusLg · panels, hero art</span></div>
           <div class="radiusCell"><div class="radiusBox" style="--radiusValue: var(--radiusPill)"></div><strong>Pill · 999px</strong><span class="textCaption">--radiusPill · buttons, badges</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== MOTION ========== -->
+    <section class="dsSection" id="motion" aria-labelledby="motionTitle">
+      <div class="container">
+        <h2 class="textH1" id="motionTitle">Motion</h2>
+        <p class="textMuted">Subtle and quick. Motion confirms an action or reveals content and never decorates for its own sake. It is turned off for visitors who prefer reduced motion.</p>
+        <div class="tableWrap">
+          <table class="dsTable">
+            <thead><tr><th scope="col">Token</th><th scope="col">Value</th><th scope="col">Used for</th></tr></thead>
+            <tbody>
+              <tr><td><code>--durationFast</code></td><td>150ms</td><td>Button color and press, link color, arrow nudge</td></tr>
+              <tr><td><code>--durationBase</code></td><td>250ms</td><td>Card lift, icon tilt, FAQ open</td></tr>
+              <tr><td><code>--durationSlow</code></td><td>600ms</td><td>Scroll reveal, ingredient shapes</td></tr>
+              <tr><td><code>--easeOut</code></td><td>cubic-bezier(0.22, 1, 0.36, 1)</td><td>All transitions</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 class="textH3 dsSubhead">Rules</h3>
+        <ul class="ruleList">
+          <li>Hover lifts cards by 4px (<span class="onPage">--space05</span>) and deepens the shadow.</li>
+          <li>Scroll reveal: fade in while moving up 24px, once only, with a 100ms stagger between siblings (<span class="onPage">data-reveal</span>).</li>
+          <li>Hero bottles float 8px on a 6s loop. This is the only looping animation.</li>
+          <li>Under <span class="onPage">prefers-reduced-motion</span>, content is visible immediately and nothing moves.</li>
+        </ul>
+        <h3 class="textH3 dsSubhead">Try it</h3>
+        <div class="demoGrid cols3">
+          <article class="card"><div class="imgPlaceholder" aria-hidden="true"><svg viewBox="0 0 120 200" style="--bottleLiquid: var(--colorSecondary)"><use href="#illBottle"/></svg></div><div class="cardBody"><h3 class="textH4">Hover this card</h3><p class="textBodySm textMuted">It lifts, and the bottle tilts.</p></div></article>
         </div>
       </div>
     </section>
