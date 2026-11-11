@@ -44,7 +44,7 @@ section[id] { scroll-margin-top: var(--space8); }
 .heroActions { display: flex; flex-wrap: wrap; gap: var(--space2); }
 .heroNote { max-width: 34rem; }
 
-.heroArt { position: relative; aspect-ratio: 1 / 1; background: var(--colorSecondary); border-radius: var(--radiusLg); overflow: hidden; display: grid; place-items: center; }
+.heroArt { position: relative; aspect-ratio: 1199 / 1312; background: var(--colorSecondary); border-radius: var(--radiusLg); overflow: hidden; display: grid; place-items: center; }
 .heroArt::before, .heroArt::after { content: ""; position: absolute; border-radius: var(--radiusPill); }
 .heroArt::before { width: 70%; aspect-ratio: 1; background: var(--colorAccent); opacity: 0.6; right: -15%; top: -15%; }
 .heroArt::after { width: 55%; aspect-ratio: 1; background: var(--colorPrimary); left: -18%; bottom: -22%; }
